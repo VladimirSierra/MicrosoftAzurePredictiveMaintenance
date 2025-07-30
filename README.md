@@ -272,4 +272,6 @@ Edit `config/config.yaml` to customize:
 
 ## DEMO
 
-This video shows how to deploy the service with dockerfile and send requests.
+The following video shows how to deploy the service with docker compose and test the endpoints.
+
+https://github.com/user-attachments/assets/858a6bd5-c8e8-442d-91b1-4fe84c6208e9
