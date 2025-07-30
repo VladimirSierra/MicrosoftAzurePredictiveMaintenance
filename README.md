@@ -64,12 +64,19 @@ The dataset contains:
 #### Quick Deploy
 ```bash
 # Clone and navigate to project
-git clone <repository-url>
-cd predictive-maintenance
+git clone https://github.com/VladimirSierra/MicrosoftAzurePredictiveMaintenance.git
+cd MicrosoftAzurePredictiveMaintenance
 
 # Deploy with Docker
-docker-compose up --build -d
+docker compose up --build -d
 ```
+
+To stop the service run:
+```bash
+# stop container
+docker compose down
+```
+
 > **Note**: Depending on your version of Docker Compose, the command might be `docker compose` (v2) or `docker-compose` (v1).
 
 #### Configuration
@@ -90,6 +97,13 @@ If you want to modify these values, edit the `docker-compose.yml`.
 
 #### 1. Environment Setup
 Requires **Python 3.9**.
+
+```bash
+# Clone and navigate to project
+git clone https://github.com/VladimirSierra/MicrosoftAzurePredictiveMaintenance.git
+cd MicrosoftAzurePredictiveMaintenance
+```
+
 ```bash
 # Create virtual environment
 python3.9 -m venv env
