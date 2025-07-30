@@ -59,7 +59,6 @@ The dataset contains:
 
 #### Prerequisites
 - Docker and Docker Compose installed
-- Trained model file (`models/predictive_maintenance_model.joblib`)
 
 #### Quick Deploy
 ```bash
