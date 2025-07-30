@@ -1,0 +1,152 @@
+2025-07-29 17:27:19,831 - __main__ - INFO - ============================================================
+2025-07-29 17:27:19,831 - __main__ - INFO - PREDICTIVE MAINTENANCE TRAINING PIPELINE
+2025-07-29 17:27:19,831 - __main__ - INFO - ============================================================
+2025-07-29 17:27:19,831 - __main__ - INFO - Initializing pipeline components...
+2025-07-29 17:27:19,841 - __main__ - INFO - 
+========================================
+2025-07-29 17:27:19,841 - __main__ - INFO - STEP 1: DATA LOADING
+2025-07-29 17:27:19,841 - __main__ - INFO - ========================================
+2025-07-29 17:27:19,841 - data.data_loader - INFO - Loading telemetry data...
+2025-07-29 17:27:20,498 - data.data_loader - INFO - Loaded telemetry data: 876100 records, 100 machines
+2025-07-29 17:27:20,498 - data.data_loader - INFO - Loading error data...
+2025-07-29 17:27:20,505 - data.data_loader - INFO - Loaded error data: 3919 records
+2025-07-29 17:27:20,505 - data.data_loader - INFO - Loading failure data...
+2025-07-29 17:27:20,508 - data.data_loader - INFO - Loaded failure data: 761 records
+2025-07-29 17:27:20,509 - data.data_loader - INFO - Loading maintenance data...
+2025-07-29 17:27:20,516 - data.data_loader - INFO - Loaded maintenance data: 3286 records
+2025-07-29 17:27:20,516 - data.data_loader - INFO - Loading machine data...
+2025-07-29 17:27:20,518 - data.data_loader - INFO - Loaded machine data: 100 machines
+2025-07-29 17:27:20,518 - data.data_loader - INFO - Loading telemetry data...
+2025-07-29 17:27:21,092 - data.data_loader - INFO - Loaded telemetry data: 876100 records, 100 machines
+2025-07-29 17:27:21,092 - data.data_loader - INFO - Loading error data...
+2025-07-29 17:27:21,096 - data.data_loader - INFO - Loaded error data: 3919 records
+2025-07-29 17:27:21,096 - data.data_loader - INFO - Loading failure data...
+2025-07-29 17:27:21,099 - data.data_loader - INFO - Loaded failure data: 761 records
+2025-07-29 17:27:21,100 - data.data_loader - INFO - Loading maintenance data...
+2025-07-29 17:27:21,104 - data.data_loader - INFO - Loaded maintenance data: 3286 records
+2025-07-29 17:27:21,104 - data.data_loader - INFO - Loading machine data...
+2025-07-29 17:27:21,105 - data.data_loader - INFO - Loaded machine data: 100 machines
+2025-07-29 17:27:21,113 - __main__ - INFO - TELEMETRY:
+2025-07-29 17:27:21,113 - __main__ - INFO -   Rows: 876,100
+2025-07-29 17:27:21,113 - __main__ - INFO -   Columns: ['datetime', 'machineID', 'volt', 'rotate', 'pressure', 'vibration']
+2025-07-29 17:27:21,113 - __main__ - INFO -   Date range: 2015-01-01 to 2016-01-01
+2025-07-29 17:27:21,113 - __main__ - INFO -   Machines: 100
+2025-07-29 17:27:21,113 - __main__ - INFO - 
+2025-07-29 17:27:21,113 - __main__ - INFO - ERRORS:
+2025-07-29 17:27:21,113 - __main__ - INFO -   Rows: 3,919
+2025-07-29 17:27:21,113 - __main__ - INFO -   Columns: ['datetime', 'machineID', 'errorID']
+2025-07-29 17:27:21,113 - __main__ - INFO -   Date range: 2015-01-01 to 2016-01-01
+2025-07-29 17:27:21,113 - __main__ - INFO -   Machines: 100
+2025-07-29 17:27:21,113 - __main__ - INFO - 
+2025-07-29 17:27:21,113 - __main__ - INFO - FAILURES:
+2025-07-29 17:27:21,113 - __main__ - INFO -   Rows: 761
+2025-07-29 17:27:21,113 - __main__ - INFO -   Columns: ['datetime', 'machineID', 'failure']
+2025-07-29 17:27:21,113 - __main__ - INFO -   Date range: 2015-01-02 to 2015-12-31
+2025-07-29 17:27:21,113 - __main__ - INFO -   Machines: 98
+2025-07-29 17:27:21,113 - __main__ - INFO - 
+2025-07-29 17:27:21,113 - __main__ - INFO - MAINTENANCE:
+2025-07-29 17:27:21,113 - __main__ - INFO -   Rows: 3,286
+2025-07-29 17:27:21,113 - __main__ - INFO -   Columns: ['datetime', 'machineID', 'comp']
+2025-07-29 17:27:21,114 - __main__ - INFO -   Date range: 2014-06-01 to 2016-01-01
+2025-07-29 17:27:21,114 - __main__ - INFO -   Machines: 100
+2025-07-29 17:27:21,114 - __main__ - INFO - 
+2025-07-29 17:27:21,114 - __main__ - INFO - MACHINES:
+2025-07-29 17:27:21,114 - __main__ - INFO -   Rows: 100
+2025-07-29 17:27:21,114 - __main__ - INFO -   Columns: ['machineID', 'model', 'age']
+2025-07-29 17:27:21,114 - __main__ - INFO -   Machines: 100
+2025-07-29 17:27:21,114 - __main__ - INFO - 
+2025-07-29 17:27:21,114 - __main__ - INFO - 
+========================================
+2025-07-29 17:27:21,114 - __main__ - INFO - STEP 2: FEATURE ENGINEERING
+2025-07-29 17:27:21,114 - __main__ - INFO - ========================================
+2025-07-29 17:27:21,114 - features.feature_engineer - INFO - Building complete feature set...
+2025-07-29 17:27:21,114 - features.feature_engineer - INFO - Computing features from scratch...
+2025-07-29 17:27:21,114 - features.feature_engineer - INFO - Creating telemetry features...
+2025-07-29 17:27:21,294 - features.feature_engineer - INFO - Processing machine 20...
+2025-07-29 17:27:21,479 - features.feature_engineer - INFO - Processing machine 40...
+2025-07-29 17:27:21,654 - features.feature_engineer - INFO - Processing machine 60...
+2025-07-29 17:27:21,847 - features.feature_engineer - INFO - Processing machine 80...
+2025-07-29 17:27:22,072 - features.feature_engineer - INFO - Processing machine 100...
+2025-07-29 17:27:22,148 - features.feature_engineer - INFO - Created telemetry features: (292100, 26)
+2025-07-29 17:27:22,150 - features.feature_engineer - INFO - Creating error features...
+2025-07-29 17:30:58,231 - features.feature_engineer - INFO - Created error features: (292100, 7)
+2025-07-29 17:30:58,248 - features.feature_engineer - INFO - Creating maintenance features...
+2025-07-29 17:33:05,232 - features.feature_engineer - INFO - Created maintenance features: (292100, 6)
+2025-07-29 17:33:05,254 - features.feature_engineer - INFO - Adding machine features...
+2025-07-29 17:33:06,660 - features.feature_engineer - INFO - Added machine features: (292100, 7)
+2025-07-29 17:33:06,680 - features.feature_engineer - INFO - Creating target variable...
+2025-07-29 17:33:10,323 - features.feature_engineer - INFO - Created target variable: 17184 positive samples out of 876100
+2025-07-29 17:33:10,331 - features.feature_engineer - INFO - Merging all features...
+2025-07-29 17:33:10,664 - features.feature_engineer - INFO - Final feature set: (292100, 42)
+2025-07-29 17:33:10,664 - features.feature_engineer - INFO - Positive samples: 5728
+2025-07-29 17:33:10,665 - features.feature_engineer - INFO - Feature columns: 38
+2025-07-29 17:33:15,528 - features.feature_engineer - INFO - Features saved to data/features/features.csv
+2025-07-29 17:33:15,528 - __main__ - INFO - Feature engineering completed!
+2025-07-29 17:33:15,528 - __main__ - INFO - Final dataset shape: (292100, 42)
+2025-07-29 17:33:15,528 - __main__ - INFO - Failure rate: 0.0196
+2025-07-29 17:33:15,529 - __main__ - INFO - 
+========================================
+2025-07-29 17:33:15,529 - __main__ - INFO - STEP 3: MODEL TRAINING
+2025-07-29 17:33:15,529 - __main__ - INFO - ========================================
+2025-07-29 17:33:15,529 - models.trainer - INFO - Running complete training pipeline...
+2025-07-29 17:33:15,529 - models.trainer - INFO - Preparing data for training...
+2025-07-29 17:33:15,568 - models.trainer - INFO - Training set: (168700, 38), positive rate: 0.020
+2025-07-29 17:33:15,568 - models.trainer - INFO - Test set: (122700, 38), positive rate: 0.018
+2025-07-29 17:33:15,569 - models.trainer - INFO - Performing cross-validation...
+2025-07-29 17:33:37,329 - models.trainer - INFO - Cross-validation results:
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_accuracy_mean: 0.9969
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_accuracy_std: 0.0010
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_precision_mean: 0.9725
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_precision_std: 0.0133
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_recall_mean: 0.8718
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_recall_std: 0.0437
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_f1_mean: 0.9191
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_f1_std: 0.0306
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_roc_auc_mean: 0.9989
+2025-07-29 17:33:37,330 - models.trainer - INFO - cv_roc_auc_std: 0.0007
+2025-07-29 17:33:37,330 - models.trainer - INFO - Training model...
+2025-07-29 17:33:38,650 - models.trainer - INFO - Model training completed
+2025-07-29 17:33:38,650 - models.trainer - INFO - Evaluating model...
+2025-07-29 17:33:39,173 - models.trainer - INFO - Classification Report:
+2025-07-29 17:33:39,241 - models.trainer - INFO - 
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00    120434
+           1       0.81      1.00      0.89      2266
+
+    accuracy                           1.00    122700
+   macro avg       0.91      1.00      0.95    122700
+weighted avg       1.00      1.00      1.00    122700
+
+2025-07-29 17:33:39,242 - models.trainer - INFO - Model Performance Metrics:
+2025-07-29 17:33:39,242 - models.trainer - INFO - accuracy: 0.9957
+2025-07-29 17:33:39,242 - models.trainer - INFO - precision: 0.8114
+2025-07-29 17:33:39,242 - models.trainer - INFO - recall: 0.9969
+2025-07-29 17:33:39,242 - models.trainer - INFO - f1: 0.8947
+2025-07-29 17:33:39,242 - models.trainer - INFO - auc: 0.9999
+2025-07-29 17:33:40,767 - models.trainer - INFO - Evaluation plots saved to models/evaluation_plots.png
+2025-07-29 17:33:40,773 - models.trainer - INFO - Model saved to models/predictive_maintenance_model.joblib
+2025-07-29 17:33:40,773 - models.trainer - INFO - Tracking experiment with MLflow...
+2025-07-29 17:33:42,580 - models.trainer - INFO - Experiment tracked successfully
+2025-07-29 17:33:42,580 - models.trainer - INFO - Training pipeline completed successfully
+2025-07-29 17:33:42,580 - __main__ - INFO - Training pipeline completed successfully!
+2025-07-29 17:33:42,580 - __main__ - INFO - 
+========================================
+2025-07-29 17:33:42,580 - __main__ - INFO - PIPELINE SUMMARY
+2025-07-29 17:33:42,581 - __main__ - INFO - ========================================
+2025-07-29 17:33:42,581 - __main__ - INFO - ✓ Data loaded: 5 datasets
+2025-07-29 17:33:42,581 - __main__ - INFO - ✓ Features created: 38 features
+2025-07-29 17:33:42,581 - __main__ - INFO - ✓ Model trained and saved
+2025-07-29 17:33:42,581 - __main__ - INFO - ✓ Evaluation plots created
+2025-07-29 17:33:42,581 - __main__ - INFO - ✓ Experiment tracked with MLflow
+2025-07-29 17:33:42,581 - __main__ - INFO - 
+Artifacts created:
+2025-07-29 17:33:42,581 - __main__ - INFO -   - Model: models/predictive_maintenance_model.joblib
+2025-07-29 17:33:42,581 - __main__ - INFO -   - Features: data/features/features.csv
+2025-07-29 17:33:42,581 - __main__ - INFO -   - Plots: models/evaluation_plots.png
+2025-07-29 17:33:42,581 - __main__ - INFO -   - Logs: training.log
+2025-07-29 17:33:42,581 - __main__ - INFO - 
+Next steps:
+2025-07-29 17:33:42,581 - __main__ - INFO -   1. Review model performance in the evaluation plots
+2025-07-29 17:33:42,581 - __main__ - INFO -   2. Test the API with: python -m uvicorn src.api.app:app --reload
+2025-07-29 17:33:42,581 - __main__ - INFO -   3. Monitor model performance in production

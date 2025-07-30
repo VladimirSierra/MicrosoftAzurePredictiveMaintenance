@@ -1,0 +1,15 @@
+artifact_uri: file:///home/vladimir/Documents/ml_challenge/predictive-maintenance-2/mlruns/0/ab343232c3ec4c5aaa1abd6b96dd4211/artifacts
+end_time: 1753767851885
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ab343232c3ec4c5aaa1abd6b96dd4211
+run_name: dashing-quail-476
+run_uuid: ab343232c3ec4c5aaa1abd6b96dd4211
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753767849313
+status: 3
+tags: []
+user_id: vladimir

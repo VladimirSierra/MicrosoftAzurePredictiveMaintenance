@@ -1,0 +1,79 @@
+# Predictive Maintenance Configuration
+
+# Data Configuration
+data:
+  raw_data_path: "Data/"
+  processed_data_path: "data/processed/"
+  features_path: "data/features/"
+  models_path: "models/"
+  
+  # File names
+  telemetry_file: "PdM_telemetry.csv"
+  errors_file: "PdM_errors.csv"
+  failures_file: "PdM_failures.csv"
+  machines_file: "PdM_machines.csv"
+  maintenance_file: "PdM_maint.csv"
+
+# Feature Engineering
+feature_engineering:
+  # Time windows for aggregations (in hours) - simplified for performance
+  telemetry_windows: [3, 24]  # 3h, 1day (removed 1week for speed)
+  error_windows: [24]  # 1day only
+  
+  # Rolling statistics to compute - simplified
+  telemetry_stats: ["mean", "std"]  # Removed min/max for 3h, only for 24h
+  
+  # Prediction window (predict failure in next X hours)
+  prediction_window: 24
+  
+  # Features to engineer from telemetry
+  telemetry_features: ["volt", "rotate", "pressure", "vibration"]
+
+# Model Configuration
+model:
+  # Model type
+  algorithm: "xgboost"
+  
+  # XGBoost parameters
+  xgboost:
+    objective: "binary:logistic"
+    n_estimators: 100
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+  
+  # Training parameters
+  test_size: 0.2
+  validation_size: 0.2
+  cv_folds: 5
+  
+  # Model evaluation
+  metrics: ["precision", "recall", "f1", "auc"]
+  threshold: 0.5
+
+# Training Configuration
+training:
+  # Date splits for time series validation
+  train_start: "2015-01-01"
+  train_end: "2015-07-31"
+  test_start: "2015-08-01"
+  test_end: "2015-10-31"
+  
+  # Batch processing
+  batch_size: 10000
+  
+  # Model artifact versioning
+  model_version: "v1"
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  model_name: "predictive_maintenance"
+  
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s" 
